@@ -1,5 +1,5 @@
 <div class="container mx-auto p-2 text-[16px]">
-  <div class="flex items-center justify-between">
+  <div class="flex flex-col md:flex-row items-center justify-between">
     <!-- logo -->
     <a href="/">
       <img
@@ -12,7 +12,9 @@
 
     <!-- nav -->
     <nav>
-      <ul class="flex items-center gap-2 text-xl text-gray-700 font-bold">
+      <ul
+        class="flex flex-col sm:flex-row items-center gap-2 text-xl text-gray-700 font-bold"
+      >
         <li class="hover:bg-blue-50 hover:text-violet-900 px-3 py-2 rounded-md">
           <a href="">Home</a>
         </li>
@@ -29,7 +31,7 @@
     <div>
       <form class="relative">
         <input
-          class="bg-blue-50 border-blue-50 border text-neutral-400 rounded-[50px] w-80 h-14 px-4 font-semibold focus:border-violet-600"
+          class="bg-blue-50 border-blue-50 border text-neutral-700 rounded-[50px] w-80 h-14 px-4 font-semibold focus:border-violet-600 outline-none placeholder:text-neutral-400"
           type="text"
           placeholder="Search..."
         />

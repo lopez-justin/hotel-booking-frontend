@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+.dp-picker-input {
+  width: 100% !important;
+  height: 32px !important;
+  border: 1px solid white;
+  border-radius: 4px;
+  direction: rtl;
+  display: block;
+  color: #364153;
+  font-size: 18px !important;
+  box-shadow: unset !important;
+  padding-inline: 10px;
+}
+
+.dp-picker-input::placeholder {
+  font-size: 18px;
+  color: #6a7282;
+}
+
+.dp-picker-input:focus {
+  border: 1px solid #7f22fe;
+}
+
+.dp-picker-input:focus::placeholder {
+  color: transparent;
+}

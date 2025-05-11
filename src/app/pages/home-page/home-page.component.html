@@ -1,1 +1,125 @@
-<p>home-page works!</p>
+<div
+  class="py-28 bg-cover bg-center bg-no-repeat"
+  style="background-image: url('assets/images/img-background.jpg')"
+>
+  <div class="container mx-auto flex flex-col items-center">
+    <h2 class="text-6xl font-semibold text-white mb-5 text-center">
+      Book your next trip
+    </h2>
+    <p class="text-xl text-white text-center">
+      Find the best hotels, restaurants, and things to do
+    </p>
+
+    <div class="mt-10 bg-white rounded-[50px] shadow-lg p-7">
+      <form
+        class="flex flex-col md:flex-row items-center justify-between gap-10"
+      >
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-end"
+        >
+          <!-- Location -->
+          <div class="flex flex-row items-center justify-center gap-3">
+            <div>
+              <label
+                class="block mb-1 text-gray-700 text-lg font-semibold pr-2.5"
+                for="location"
+                >Location</label
+              >
+              <input
+                class="block text-end w-full h-8 px-2.5 text-gray-700 text-lg placeholder:text-gray-500 border border-white rounded outline-none focus:border-violet-600 focus:placeholder:text-transparent"
+                type="text"
+                placeholder="Where are you heading?"
+                id="location"
+              />
+            </div>
+            <img
+              height="25"
+              width="25"
+              src="assets/images/icons/search.svg"
+              alt="search"
+            />
+          </div>
+
+          <!-- Guests -->
+          <div class="flex flex-row items-center justify-center gap-3">
+            <div>
+              <label
+                class="block mb-1 text-gray-700 text-lg font-semibold pr-2.5"
+                for="guests"
+                >Guests
+              </label>
+              <input
+                class="block text-end w-full h-8 px-2.5 text-gray-700 text-lg placeholder:text-gray-500 border border-white rounded outline-none focus:border-violet-600 focus:placeholder:text-transparent"
+                type="text"
+                placeholder="Add guests"
+                id="guests"
+              />
+            </div>
+            <img
+              height="30"
+              width="30"
+              src="assets/images/icons/user-check.svg"
+              alt="guests"
+            />
+          </div>
+
+          <!-- Check-in date -->
+          <div class="flex flex-row items-center justify-center gap-3">
+            <div>
+              <label
+                class="block mb-1 text-gray-700 text-lg font-semibold pr-2.5"
+                for=""
+                >Check-in date</label
+              >
+              <dp-date-picker
+                class="block"
+                theme="dp-material"
+                placeholder="Enter date here"
+                [config]="datePickerConfig"
+                required="true"
+              ></dp-date-picker>
+            </div>
+            <img
+              height="25"
+              width="25"
+              src="assets/images/icons/calendar.svg"
+              alt="calendar"
+            />
+          </div>
+
+          <!-- Check-out date -->
+          <div class="flex flex-row items-center justify-center gap-3">
+            <div>
+              <label
+                class="block mb-1 text-gray-700 text-lg font-semibold pr-2.5"
+                for=""
+                >Check-out date</label
+              >
+              <dp-date-picker
+                class=""
+                theme="dp-material"
+                placeholder="Enter date here"
+                [config]="datePickerConfig"
+                required="true"
+              ></dp-date-picker>
+            </div>
+            <img
+              height="25"
+              width="25"
+              src="assets/images/icons/calendar.svg"
+              alt="calendar"
+            />
+          </div>
+        </div>
+
+        <!-- Search button -->
+        <button
+          class="w-full h-18 md:w-18 bg-violet-600 hover:bg-violet-900 text-white rounded-[50px] font-semibold text-2xl"
+          type="submit"
+        >
+          <i class="ri-search-line"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
