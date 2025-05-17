@@ -14,23 +14,20 @@
 
   <section>
     <ul>
+      @for (hotel of hotels(); track hotel.hotelId) {
       <li
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 items-center mt-4 bg-gray-100"
       >
         <div class="col-span-1 md:col-span-2 lg:col-span-1 lg:row-span-2 p-8">
-          <img
-            class="block rounded-sm"
-            src="assets/images/hotels/hotel1.jpg"
-            alt="hotel image"
-          />
+          <img class="block rounded-sm" [src]="hotel.image" alt="hotel image" />
         </div>
 
         <div class="col-span-1 p-8 pt-0 lg:pt-8">
           <h3 class="text-2xl text-gray-700 font-bold mb-2">
-            <a href="">Hotel California</a>
+            <a href="">{{ hotel.name }}</a>
           </h3>
           <p class="mb-2 font-semibold text-gray-600 text-lg">
-            Los Ángeles 322, California
+            {{ hotel.street }} {{ hotel.number }}, {{ hotel.cityName }}
           </p>
           <div class="mb-2">
             <i class="ri-star-fill text-lg text-amber-600"></i>
@@ -40,10 +37,10 @@
             <i class="ri-star-half-fill text-lg text-amber-600"></i>
           </div>
           <p class="font-semibold text-gray-600 text-lg mb-2">
-            4.8/5 Maravilloso (100 reviews)
+            {{ hotel.averageRating }}/5 Maravilloso (100 reviews)
           </p>
           <div class="font-semibold text-gray-600 text-lg mb-5">
-            $200 <span>Por noche</span>
+            ${{ hotel.price }} <span>Por noche</span>
           </div>
           <a
             class="font-semibold underline text-xl text-blue-600 hover:text-violet-700 cursor-pointer"
@@ -54,154 +51,14 @@
         <ul
           class="col-span-1 flex flex-row flex-wrap md:flex-col lg:flex-row xl:flex-col gap-5 p-8 pt-0 xl:pt-8 text-lg font-semibold text-gray-600"
         >
+          @for (service of hotel.services; track service.serviceId) {
           <li>
-            <i class="ri-wifi-line"></i>
-            Wifi gratis
+            {{ service.serviceName }}
           </li>
-          <li>
-            <i class="ri-roadster-line"></i>
-            Parking gratis
-          </li>
-          <li>
-            <i class="ri-wheelchair-line"></i>
-            Aire Acondicionado
-          </li>
-          <li>
-            <i class="ri-restaurant-2-line"></i>
-            Restaurante
-          </li>
-          <li>
-            <i class="ri-riding-line"></i>
-            Gym
-          </li>
+          }
         </ul>
       </li>
-
-      <li
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 items-center mt-4 bg-gray-100"
-      >
-        <div class="col-span-1 md:col-span-2 lg:col-span-1 lg:row-span-2 p-8">
-          <img
-            class="block rounded-sm"
-            src="assets/images/hotels/hotel2.jpg"
-            alt="hotel image"
-          />
-        </div>
-
-        <div class="col-span-1 p-8 pt-0 lg:pt-8">
-          <h3 class="text-2xl text-gray-700 font-bold mb-2">
-            <a href="">Hotel Transilvania</a>
-          </h3>
-          <p class="mb-2 font-semibold text-gray-600 text-lg">
-            Los Muermos 111, Transilvania
-          </p>
-          <div class="mb-2">
-            <i class="ri-star-fill text-lg text-amber-600"></i>
-            <i class="ri-star-fill text-lg text-amber-600"></i>
-            <i class="ri-star-fill text-lg text-amber-600"></i>
-            <i class="ri-star-fill text-lg text-amber-600"></i>
-            <i class="ri-star-half-fill text-lg text-amber-600"></i>
-          </div>
-          <p class="font-semibold text-gray-600 text-lg mb-2">
-            4.6/5 Maravilloso (120 reviews)
-          </p>
-          <div class="font-semibold text-gray-600 text-lg mb-5">
-            $250 <span>Por noche</span>
-          </div>
-          <a
-            class="font-semibold underline text-xl text-blue-600 hover:text-violet-700 cursor-pointer"
-            >Reservar</a
-          >
-        </div>
-
-        <ul
-          class="col-span-1 flex flex-row flex-wrap md:flex-col lg:flex-row xl:flex-col gap-5 p-8 pt-0 xl:pt-8 text-lg font-semibold text-gray-600"
-        >
-          <li>
-            <i class="ri-wifi-line"></i>
-            Wifi gratis
-          </li>
-          <li>
-            <i class="ri-roadster-line"></i>
-            Parking gratis
-          </li>
-          <li>
-            <i class="ri-wheelchair-line"></i>
-            Aire Acondicionado
-          </li>
-          <li>
-            <i class="ri-restaurant-2-line"></i>
-            Restaurante
-          </li>
-          <li>
-            <i class="ri-riding-line"></i>
-            Gym
-          </li>
-        </ul>
-      </li>
-
-      <li
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 items-center mt-4 bg-gray-100"
-      >
-        <div class="col-span-1 md:col-span-2 lg:col-span-1 lg:row-span-2 p-8">
-          <img
-            class="block rounded-sm"
-            src="assets/images/hotels/hotel4.jpg"
-            alt="hotel image"
-          />
-        </div>
-
-        <div class="col-span-1 p-8 pt-0 lg:pt-8">
-          <h3 class="text-2xl text-gray-700 font-bold mb-2">
-            <a href="">Hotel ISBI</a>
-          </h3>
-          <p class="mb-2 font-semibold text-gray-600 text-lg">
-            San Marcos 122, Santiago
-          </p>
-          <div class="mb-2">
-            <i class="ri-star-fill text-lg text-amber-600"></i>
-            <i class="ri-star-fill text-lg text-amber-600"></i>
-            <i class="ri-star-fill text-lg text-amber-600"></i>
-            <i class="ri-star-fill text-lg text-amber-600"></i>
-            <i class="ri-star-half-fill text-lg text-amber-600"></i>
-          </div>
-          <p class="font-semibold text-gray-600 text-lg mb-2">
-            4.8/5 Maravilloso (100 reviews)
-          </p>
-          <div class="font-semibold text-gray-600 text-lg mb-5">
-            $200 <span>Por noche</span>
-          </div>
-          <a
-            class="font-semibold underline text-xl text-blue-600 hover:text-violet-700 cursor-pointer"
-            >Reservar</a
-          >
-        </div>
-
-        <ul
-          class="col-span-1 flex flex-row flex-wrap md:flex-col lg:flex-row xl:flex-col gap-5 p-8 pt-0 xl:pt-8 text-lg font-semibold text-gray-600"
-        >
-          <li>
-            <i class="ri-wifi-line"></i>
-            Wifi gratis
-          </li>
-          <li>
-            <i class="ri-roadster-line"></i>
-            Parking gratis
-          </li>
-          <li>
-            <i class="ri-wheelchair-line"></i>
-            Aire Acondicionado
-          </li>
-          <li>
-            <i class="ri-restaurant-2-line"></i>
-            Restaurante
-          </li>
-          <li>
-            <i class="ri-riding-line"></i>
-            Gym
-          </li>
-        </ul>
-      </li>
+      }
     </ul>
   </section>
 </div>

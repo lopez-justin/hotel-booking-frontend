@@ -12,6 +12,8 @@
 
     <div class="mt-10 bg-white rounded-[50px] shadow-lg p-7">
       <form
+        [formGroup]="myForm"
+        (ngSubmit)="loadHotels()"
         class="flex flex-col md:flex-row items-center justify-between gap-10"
       >
         <div
@@ -26,6 +28,7 @@
                 >Location</label
               >
               <input
+                formControlName="cityId"
                 class="block text-end w-full h-8 px-2.5 text-gray-700 text-lg placeholder:text-gray-500 border border-white rounded outline-none focus:border-violet-600 focus:placeholder:text-transparent"
                 type="text"
                 placeholder="Where are you heading?"
@@ -49,6 +52,7 @@
                 >Guests
               </label>
               <input
+                formControlName="guests"
                 class="block text-end w-full h-8 px-2.5 text-gray-700 text-lg placeholder:text-gray-500 border border-white rounded outline-none focus:border-violet-600 focus:placeholder:text-transparent"
                 type="text"
                 placeholder="Add guests"
@@ -72,6 +76,7 @@
                 >Check-in date</label
               >
               <dp-date-picker
+                formControlName="checkInDate"
                 class="block"
                 theme="dp-material"
                 placeholder="Enter date here"
@@ -96,6 +101,7 @@
                 >Check-out date</label
               >
               <dp-date-picker
+                formControlName="checkOutDate"
                 class=""
                 theme="dp-material"
                 placeholder="Enter date here"
@@ -126,5 +132,5 @@
 
 <div class="container mx-auto grid md:grid-cols-4 gap-10 py-24 px-2">
   <app-search-box-sidebar class="md:col-span-1" />
-  <app-hotel-list class="md:col-span-3" />
+  <app-hotel-list [hotels]="hotels()" class="md:col-span-3" />
 </div>

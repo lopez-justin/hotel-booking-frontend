@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Hotel } from '../../interfaces/hotel.interface';
 
 @Component({
   selector: 'app-hotel-list',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class HotelListComponent {
+
+  hotels = input<Hotel[]>([]);
 
 }
